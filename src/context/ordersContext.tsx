@@ -113,7 +113,7 @@ const OrderContextProvider: React.FC<React.PropsWithChildren> = ({ children }) =
 
   useEffect(() => {
     const loadData = async () => {
-      const data = await getOrdersData();
+      const data = await getOrdersData() as ContextState;
       setContextData(data);
       setImmutableData(data)
     }

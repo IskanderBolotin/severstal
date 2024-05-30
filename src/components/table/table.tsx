@@ -9,11 +9,13 @@ type TableProps = TableOwnProps & Omit<ComponentProps<"table">, keyof TableOwnPr
 
 const Table: React.FC<React.PropsWithChildren<TableProps>> = ({ children, className, ...otherProps}) => {
   return (
-    <table className={s.table} {...otherProps}>
-      {
-        children
-      }
-    </table>
+    <div className={s.wrapper}>
+      <table className={s.table} {...otherProps}>
+        {
+          children
+        }
+      </table>
+    </div>
   )
 }
 export default Table;
