@@ -9,6 +9,8 @@ export type ContextState = {
 
 export type ContextModel = {
   context: ContextState;
+  immutable: ContextState;
+  createOrder?: (order: OrderModel) => void;
   setOrderStatus?: (id: number, status_id: number) => void;
   setOrderDate?: (id: number, value: string) => void;
   filerOrders?: (value: string) => void;

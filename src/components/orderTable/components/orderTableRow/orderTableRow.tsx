@@ -27,7 +27,7 @@ const OrderTableRow: React.FC<OrderTableRowProps> = ({ data, tdClassName }) => {
   const [isEditing, setIsEditing] = useState<boolean>(false);
   const [expireDateState, setExpireDateState] = useState<string>(displayedProps.find(item => item[0] === "expire_date")?.[1]);
   const [statusIdState, setStatusIdState] = useState<number>(displayedProps.find(item => item[0] === "status_id")?.[1]);
-  const [validateObj, setValidateObj] = useState({ date: true, status: true })
+  const [validateObj, setValidateObj] = useState({ date: true, status: true });
 
   const validateHandler = () => {
     if (!validateSting(expireDateState)) {

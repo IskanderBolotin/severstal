@@ -7,7 +7,7 @@ const TitleOrderDictionary: Record<string, string> = {
   order_id: "Номер заказа",
   quantity: "Количество товаров в заказе",
   order_date: "Дата оформления",
-  expire_date: "Хранение до (дата и время)",
+  expire_date: "Хранение до",
   status_id: "Статус заказа",
   customer_name: "ФИО клиента",
   phone_number: "Номер телефона",
@@ -85,7 +85,7 @@ export const setOrderExpireDate = (data: OrderModel[], id: number, value: string
     }
     return order;
   })
-}
+};
 
 
 export const setOrderStatusId = (data: OrderModel[], id: number, status_id: number): OrderModel[] => {
@@ -95,4 +95,8 @@ export const setOrderStatusId = (data: OrderModel[], id: number, status_id: numb
     }
     return order;
   })
+};
+
+export const createOrderToOrders = (data: OrderModel[], order: OrderModel) => {
+  return [...data, order];
 }

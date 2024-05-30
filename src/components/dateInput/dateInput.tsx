@@ -1,6 +1,7 @@
 import { DatePicker, ConfigProvider } from 'antd';
 import dayjs from 'dayjs';
 import locale from 'antd/locale/ru_RU';
+import { useEffect } from 'react';
 
 type DateInputProps = {
   value: string;
@@ -19,6 +20,10 @@ const DateInput: React.FC<DateInputProps> = ({ value, isError = false, inputHand
     }
     return props;
   };
+
+  useEffect(() => {
+    inputHandler(value as string)
+  }, [])
 
   return (
     <ConfigProvider locale={locale}>

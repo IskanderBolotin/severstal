@@ -2,6 +2,7 @@ import React, { useContext, useMemo } from "react";
 import { OrderContext } from "src/context/ordersContext";
 import Table from "components/table";
 import SortForm from "components/sortForm";
+import CreateOrder from "components/createOrder";
 import TableTr from "components/table/components/tableTr";
 import TableTh from "components/table/components/tableTh";
 import OrderTableRow from "components/orderTable/components/orderTableRow";
@@ -40,9 +41,7 @@ const OrderTable: React.FC = () => {
                 })
               }
               <TableTh className={s.th}>
-                <button>
-                  add
-                </button>
+                <CreateOrder />
               </TableTh>
             </>
           </TableTr>
