@@ -1,14 +1,20 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { OrderContext } from "src/context/ordersContext";
 import { Input } from "antd";
 import s from "./searchForm.module.scss";
 
 const SearchForm: React.FC = () => {
-  const { context, setValue } = useContext(OrderContext);
+  const { filerOrders } = useContext(OrderContext);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("search") || "";
   const [inputState, setInputState] = useState(query);
+  
+  useEffect(() => {
+    if (!!filerOrders) {
+      filerOrders(query)
+    }
+  }, [])
 
   return (
     <>
@@ -23,13 +29,8 @@ const SearchForm: React.FC = () => {
             onChange={(e) => setInputState(e.target.value)}
             onSearch={(value: string, e: any) => {
               e.preventDefault();
-              if (!!setValue) {
-                setValue(
-                  {
-                    ...context,
-                    orders: [...context.orders].filter((order) => order.customer_name.toLowerCase().includes(value.toLowerCase()))
-                  }
-                )
+              if (!!filerOrders) {
+                filerOrders(value)
               }
               setSearchParams({ search: value });
             }}

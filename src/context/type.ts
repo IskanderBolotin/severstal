@@ -1,4 +1,5 @@
 import { OrderModel, ProductModel, OrderStatudModel } from "src/models";
+import { SortingByType } from "types/sorting";
 
 export type ContextState = {
   orders: OrderModel[];
@@ -8,6 +9,9 @@ export type ContextState = {
 
 export type ContextModel = {
   context: ContextState;
-  immutable: ContextState;
-  setValue?: (value: ContextState) => void;
+  setOrderStatus?: (id: number, status_id: number) => void;
+  setOrderDate?: (id: number, value: string) => void;
+  filerOrders?: (value: string) => void;
+  sortOrdersByDate?: (type: SortingByType) => void;
+  sortOrdersByStatus?: (type: SortingByType) => void;
 }

@@ -22,7 +22,7 @@ export const sortByStatus = (
   data: OrderModel[],
   sortingBy: SortingByType = "ASC",
 ) => {
-  return data.sort((a, b) => {
+  return [...data].sort((a, b) => {
     if (sortingBy === "ASC") {
       return a.status_id - b.status_id;
     }

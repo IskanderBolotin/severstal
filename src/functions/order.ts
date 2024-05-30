@@ -71,4 +71,28 @@ export const mapOrderDataToDetailProps = (data: OrderModel): [string, string, an
 
 export const getOrderByOrderId = (data: OrderModel[], order_id: string): OrderModel => {
   return data.find((order) => order.order_id === order_id) || {} as OrderModel;
+};
+
+export const filterOrderByOrderIdOrCustomerName = (data: OrderModel[], value: string): OrderModel[] => {
+  const currentValue = value.toLowerCase();
+  return [...data].filter((order) => order.customer_name.toLowerCase().includes(currentValue) || order.order_id.toLowerCase().includes(currentValue))
+};
+
+export const setOrderExpireDate = (data: OrderModel[], id: number, value: string): OrderModel[] => {
+  return [...data].map((order) => {
+    if (order.id === id) {
+      order.expire_date = value;
+    }
+    return order;
+  })
+}
+
+
+export const setOrderStatusId = (data: OrderModel[], id: number, status_id: number): OrderModel[] => {
+  return [...data].map((order) => {
+    if (order.id === id) {
+      order.status_id = status_id;
+    }
+    return order;
+  })
 }

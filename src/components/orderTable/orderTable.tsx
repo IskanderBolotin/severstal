@@ -20,7 +20,7 @@ const OrderTable: React.FC = () => {
         <thead>
           <TableTr className={s.tableHeader}>
             <>
-              <TableTh />
+              <TableTh className={s.th} />
               {
                 dataHeaderCell.map(([propety_name, value]) => {
 
@@ -39,7 +39,7 @@ const OrderTable: React.FC = () => {
                   )
                 })
               }
-              <TableTh>
+              <TableTh className={s.th}>
                 <button>
                   add
                 </button>

@@ -38,3 +38,19 @@
     text-decoration: underline;
   }
 }
+.td {
+  &:nth-child(1) {
+    width: 71px;
+  }
+  &:nth-child(4),
+  &:nth-child(5),
+  &:nth-child(6) {
+    width: 200px;
+  }
+  &:nth-child(10) {
+    width: 122px;
+  }
+}
+.error {
+  border-color: red;
+}
