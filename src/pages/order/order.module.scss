@@ -1,0 +1,12 @@
+.item {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .name {
+    font-weight: 600;
+  }
+}
+.table {
+  max-width: 900px;
+  margin-top: 20px;
+}

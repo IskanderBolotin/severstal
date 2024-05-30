@@ -1,0 +1,40 @@
+.productTh {
+  padding: 0;
+  th {
+    border-top: 0;
+    &:first-child {
+      border-left: 0;
+    }
+    &:last-child {
+      border-right: 0;
+    }
+  }
+  td {
+    &:first-child {
+      border-left: 0;
+    }
+    &:last-child {
+      border-right: 0;
+    }
+  }
+  tr {
+    &:last-child {
+      td {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+.statusCell {
+  text-align: center;
+}
+.editCell {
+  width: 122px;
+  min-width: 122px;
+}
+.link {
+  font-weight: 600;
+  &:hover {
+    text-decoration: underline;
+  }
+}

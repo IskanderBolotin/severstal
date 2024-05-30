@@ -1,0 +1,26 @@
+.title {
+  margin-bottom: 25px;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px -15px 0;
+}
+.item {
+  padding: 15px 15px 0;
+  width: 50%;
+}
+.link {
+  display: block;
+  text-align: center;
+  padding: 10px 15px;
+  background-color: #778899;
+  color: #fff;
+  font-size: 16px;
+  &.active {
+    background-color: #4f5c69;
+  }
+}
+.top {
+  margin-bottom: 20px;
+}
